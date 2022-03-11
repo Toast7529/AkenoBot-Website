@@ -1,0 +1,148 @@
+:root {
+    --clr-neon: #a75bff;
+    --clr-bg: #160030;
+    --clr-hclr: #3b007e;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: var(--clr-bg);
+    font-family: 'Oswald', sans-serif;
+    color: var(--clr-neon);
+}
+
+.neon-invite {
+    font-size: 2rem;
+
+    display: inline-block;
+    cursor: pointer;
+    color: var(--clr-neon);
+    text-decoration: none;
+    border: var(--clr-neon) .125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+    text-shadow: 0 0 0.5em currentColor;
+    box-shadow: inset 0 0 .25em currentColor, 0 0 .5em currentColor;
+    margin: 2rem;
+    position: relative;
+
+    transition: background-color 150ms linear;
+}
+
+.neon-invite::before {
+    pointer-events: none;
+    position: absolute;
+    content: "";
+    background: var(--clr-neon);
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    /* Glow perspective */
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+}
+
+
+.neon-invite::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+    opacity: 0;
+    transition: opacity 150ms linear;
+}
+
+
+
+.neon-invite:hover,
+.neon-invite:focus {
+    background: var(--clr-neon);
+    color: var(--clr-bg);
+    text-shadow: none;
+    transform: translateY(10px);
+
+    transition: background-color 150ms linear;
+}
+
+.neon-invite:hover::before,
+.neon-invite:focus::before {
+
+    opacity: 1;
+}
+
+.neon-invite:hover::after,
+.neon-invite:focus::after {
+    opacity: 1;
+}
+
+.img-border {
+    height: 75%;
+    width: 75%;
+    border: var(--clr-neon) 0.5em solid;
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em var(--clr-neon);
+    display: block;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+
+
+
+/* Scroll bar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #14002b;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+    border-radius: 5px;
+    background-color: #380079;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: grey;
+}
+
+.instagram-url {
+    text-decoration: none;
+    color: #ffffff;
+    
+}
+.desc-text {
+    font-size: 0.5rem;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 0 0 0.5rem #a600cf;
+
+}
